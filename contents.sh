@@ -28,7 +28,10 @@ sudo cp /etc/authorization /etc/authorization.bak
 #Modify /etc/authorization to create a kerberos ticket at login
 sudo /usr/libexec/PlistBuddy -c "Add :rights:system.login.console:mechanisms:11 string "builtin:krb5store,privileged"" /etc/authorization
 
+# Backup the original swupd.plist
 sudo cp /etc/swupd/swupd.plist /etc/swupd/swupd.plist.bak
+
+# Change the MetaIndexURL to point to your own SUS (replace swupdate.example.com with your SUS's FQDN).
 sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:8088/catalogs.sucatalog' /etc/swupd/swupd.plist
 
 sudo rm -rf /private/etc/swupd/com.apple.server.swupdate.plist
