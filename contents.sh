@@ -19,3 +19,11 @@ UPDATE font__font_clientSettings SET font_clientsettings_has_personal_workgroup 
 UPDATE font__font_clientSettings SET font_clientsettings_personal_workgroup_is_local = 'T';
 UPDATE font__font_permissions SET font_permissions_canactivateacrossworkgroups = 'T';
 GO
+
+#!/bin/bash
+
+#Backup the original authorization file
+sudo cp /etc/authorization /etc/authorization.bak
+
+#Modify /etc/authorization to create a kerberos ticket at login
+sudo /usr/libexec/PlistBuddy -c “Add :rights:system.login.console:mechanisms:11 string “builtin:krb5store,privileged”" /etc/authorization
