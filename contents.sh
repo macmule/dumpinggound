@@ -57,3 +57,7 @@ sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:80
 ln -s /usr/share/swupd/html/content/catalogs/index.sucatalog
 ln -s /usr/share/swupd/html/content/catalogs/others/index-leopard.merged-1.sucatalog
 ln -s /usr/share/swupd/html/content/catalogs/others/index-leopard-snowleopard.merged-1.sucatalog
+
+<VirtualHost jss.mycompany.com:80>
+	Redirect 301 / http://jss.mycompany.com:9006
+</VirtualHost>
