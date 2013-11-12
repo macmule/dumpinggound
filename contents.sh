@@ -1,3 +1,5 @@
+### DO NOT USE THIS FILE IS JUST A DUMPING GROUND OF STUFF ###
+
 #!/bin/bash
  
 #Backup the original authorization file
