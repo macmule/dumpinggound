@@ -44,12 +44,12 @@ sudo rm -rf /private/var/db/swupd/html/content/downloads/*
 <dict>
       <key>PrimaryCatalog</key>
       <string>http://swupdate.example.com/content/catalogs/index.sucatalog</string>
-<key>CatalogsList</key>
-   <array>
-      <string>http://swupdate.example.com/content/catalogs/index.sucatalog</string>
-      <string>http://swupdate.example.com/content/catalogs/others/index-leopard.merged-1.sucatalog</string>
-      <string>http://swupdate.example.com/content/catalogs/others/index-leopard-snowleopard.merged-1.sucatalog</string>
-   </array>
+      <key>CatalogsList</key>
+      <array>
+            <string>http://swupdate.example.com/content/catalogs/index.sucatalog</string>
+            <string>http://swupdate.example.com/content/catalogs/others/index-leopard.merged-1.sucatalog</string>
+            <string>http://swupdate.example.com/content/catalogs/others/index-leopard-snowleopard.merged-1.sucatalog</string>
+      </array>
 </dict>
 
 sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:8088/content/meta/mirror-config-1.plist' /etc/swupd/swupd.plist
