@@ -26,4 +26,4 @@ GO
 sudo cp /etc/authorization /etc/authorization.bak
 
 #Modify /etc/authorization to create a kerberos ticket at login
-sudo /usr/libexec/PlistBuddy -c “Add :rights:system.login.console:mechanisms:11 string “builtin:krb5store,privileged”" /etc/authorization
+sudo /usr/libexec/PlistBuddy -c "Add :rights:system.login.console:mechanisms:11 string "builtin:krb5store,privileged"" /etc/authorization
