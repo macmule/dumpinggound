@@ -85,3 +85,5 @@ sudo dsconfigad -useuncpath disable
 sudo nano /private/etc/apache2/httpd.conf
 
 Include /private/etc/apache2/extra/httpd-vhosts.conf
+
+sudo nano  /private/etc/apache2/extra/httpd-vhosts.conf
