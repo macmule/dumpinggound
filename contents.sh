@@ -79,3 +79,5 @@ sudo languagesetup –langspec French
 defaults write /Library/ScriptingAdditions/Adobe\ Unit\ Types.osax/Contents/Info CFBundleVersion 2.1.0
 
 sudo dseditgroup -o edit -n /Local/Default -a everyone -t group lpadmin
+
+sudo dsconfigad -useuncpath disable
