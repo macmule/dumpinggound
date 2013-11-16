@@ -89,3 +89,5 @@ Include /private/etc/apache2/extra/httpd-vhosts.conf
 sudo nano  /private/etc/apache2/extra/httpd-vhosts.conf
 
 sudo serveradmin command web:command=restoreFactorySettings
+
+sudo ln -s /Shared\ Items/CasperShare /private/var/empty
