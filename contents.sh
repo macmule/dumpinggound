@@ -81,3 +81,7 @@ defaults write /Library/ScriptingAdditions/Adobe\ Unit\ Types.osax/Contents/Info
 sudo dseditgroup -o edit -n /Local/Default -a everyone -t group lpadmin
 
 sudo dsconfigad -useuncpath disable
+
+sudo nano /private/etc/apache2/httpd.conf
+
+Include /private/etc/apache2/extra/httpd-vhosts.conf
