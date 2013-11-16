@@ -77,3 +77,5 @@ sudo languagesetup –langspec French
 /usr/bin/defaults write -g AppleLanguages "(en, ja, fr, de, es, it, nl, sv, nb, da, fi, pt, zh-Hans, zh-Hant, ko)"
 
 defaults write /Library/ScriptingAdditions/Adobe\ Unit\ Types.osax/Contents/Info CFBundleVersion 2.1.0
+
+sudo dseditgroup -o edit -n /Local/Default -a everyone -t group lpadmin
