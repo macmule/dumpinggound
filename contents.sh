@@ -63,3 +63,15 @@ ln -s /usr/share/swupd/html/content/catalogs/others/index-leopard-snowleopard.me
 </VirtualHost>
 
 defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool true
+
+sudo languagesetup
+
+sudo languagesetup –langspec French
+
+/usr/bin/defaults write /Library/Preferences/.GlobalPreferences AppleLanguages "(en, ja, fr, de, es, it, nl, sv, nb, da, fi, pt, zh-Hans, zh-Hant, ko)"
+
+/usr/bin/defaults write /Library/Preferences/.GlobalPreferences AppleLocale "en_GB"
+
+/usr/bin/defaults write /Library/Preferences/.GlobalPreferences Country "en_GB"
+
+/usr/bin/defaults write -g AppleLanguages "(en, ja, fr, de, es, it, nl, sv, nb, da, fi, pt, zh-Hans, zh-Hant, ko)"
