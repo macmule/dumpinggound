@@ -91,3 +91,28 @@ sudo nano  /private/etc/apache2/extra/httpd-vhosts.conf
 sudo serveradmin command web:command=restoreFactorySettings
 
 sudo ln -s /Shared\ Items/CasperShare /private/var/empty
+
+LABEL=Users\040HD /Users hfs rw
+
+#!/bin/sh
+
+# Gets the UUID of the Partition "Users HD"
+usersUUID=`diskutil info Users\ HD | grep Volume\ UUID: | awk '{print $3}'`
+
+# Echo UUID
+echo "Users HD UUID is $usersUUID..."
+
+# Empty the FSTAB file, just leaving the UUID mountpoint
+echo > $1/private/etc/fstab "UUID=$usersUUID /Users hfs rw"
+
+# Echo we've completed
+echo "Created FSTAB at $1/private/etc..."
+
+# Correct owner
+chown root $1/private/etc/fstab
+
+# Correct permissions
+chmod 755 $1/private/etc/fstab
+
+# Echo that we've corrected permissions
+echo "Repaired FSTAB permissions..."
