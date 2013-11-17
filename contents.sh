@@ -132,3 +132,7 @@ if ADGroups contains "<insert_printer_name>" then
 end if
 
 lpoptions -p <insert_printer_name> -l
+
+defaults write ~/Library/Preferences/com.apple.Safari AlwaysRestoreSessionAtLaunch -bool false
+
+defaults write ~/Library/Preferences/com.apple.Safari NewWindowBehavior -integer 0
