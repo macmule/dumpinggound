@@ -120,3 +120,14 @@ echo "Repaired FSTAB permissions..."
 defaults write com.apple.Safari  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool true
 
 defaults write com.apple.Safari ExtensionsEnabled -bool YES
+
+if ADGroups contains "<insert_printer_name>" then
+     if installedPrinters does not contain "<insert_printer_name>" then 
+          try
+               do shell script "/usr/sbin/lpadmin -p <insert_printer_name> -E -v lpd://<insert_printer_name>.macmule.com -P /Library/Printers/PPDs/Contents/Resources/en.lproj/Canon\\ iR-ADV\\ C5200s-B2\\ PS\\ V1.0 -o printer-is-shared=false -o EFDuplex=False" 
+     on error 
+               do shell script "/usr/sbin/lpadmin -p <insert_printer_name> -E -v lpd://<insert_printer_name>.macmule.com -P /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/Resources/Generic.ppd -o printer-is-shared=false" 
+          end try 
+     end if 
+end if
+
