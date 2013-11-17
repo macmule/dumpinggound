@@ -116,3 +116,5 @@ chmod 755 $1/private/etc/fstab
 
 # Echo that we've corrected permissions
 echo "Repaired FSTAB permissions..."
+
+defaults write com.apple.Safari  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool true
