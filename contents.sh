@@ -136,3 +136,8 @@ lpoptions -p <insert_printer_name> -l
 defaults write ~/Library/Preferences/com.apple.Safari AlwaysRestoreSessionAtLaunch -bool false
 
 defaults write ~/Library/Preferences/com.apple.Safari NewWindowBehavior -integer 0
+
+sudo touch /var/log/jamfChangeManagement.log 
+
+sudo chmod 777 /var/log/jamfChangeManagement.log
+
