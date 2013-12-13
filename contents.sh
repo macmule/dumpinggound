@@ -141,3 +141,6 @@ sudo touch /var/log/jamfChangeManagement.log
 
 sudo chmod 777 /var/log/jamfChangeManagement.log
 
+
+sudo cp -r /usr/local/mysql/support-files/my-huge.cnf /private/etc/my.cnf
+sudo chown root /etc/my.cnf
