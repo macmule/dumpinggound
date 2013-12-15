@@ -147,3 +147,9 @@ sudo chown root /etc/my.cnf
 
 w32tm /monitor
 
+sudo launchctl unload /System/Library/LaunchDaemons/org.ntp.ntpd.plist
+
+sudo nano /etc/ntp-restrict.conf
+
+sudo launchctl load /System/Library/LaunchDaemons/org.ntp.ntpd.plist
+
