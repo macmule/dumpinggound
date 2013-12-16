@@ -153,3 +153,8 @@ sudo nano /etc/ntp-restrict.conf
 
 sudo launchctl load /System/Library/LaunchDaemons/org.ntp.ntpd.plist
 
+# Backup the original swupd.plist
+sudo cp /Library/Server/Software\ Update/Config/swupd/swupd.plist /Library/Server/Software\ Update/Config/swupd/swupd.plist.bak
+
+# Change the MetaIndexURL to point to your own SUS (replace swupdate.example.com with your SUS's FQDN).
+sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:8088/catalogs.sucatalog' /Library/Server/Software\ Update/Config/swupd/swupd.plist
