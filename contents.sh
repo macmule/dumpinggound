@@ -158,3 +158,6 @@ sudo cp /Library/Server/Software\ Update/Config/swupd/swupd.plist /Library/Serve
 
 # Change the MetaIndexURL to point to your own SUS (replace swupdate.example.com with your SUS's FQDN).
 sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:8088/catalogs.sucatalog' /Library/Server/Software\ Update/Config/swupd/swupd.plist
+
+sudo rm -rf /Library/Application\ Support/JAMF/Downloads/*
+
