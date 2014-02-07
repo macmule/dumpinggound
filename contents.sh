@@ -160,3 +160,17 @@ sudo cp /Library/Server/Software\ Update/Config/swupd/swupd.plist /Library/Serve
 sudo /usr/libexec/PlistBuddy -c 'set metaIndexURL http://swupdate.example.com:8088/catalogs.sucatalog' /Library/Server/Software\ Update/Config/swupd/swupd.plist
 
 sudo rm -rf /Library/Application\ Support/JAMF/Downloads/*
+
+#!/bin/bash
+
+# Get the username of the currently logged in user
+loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
+
+#################
+# Allow the Microsoft Sharepoint Plug-In
+#################
+/usr/libexec/plistbuddy -c "delete ManagedPlugInPolicies:com.microsoft.sharepoint.browserplugin" /Users/$loggedInUser/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/plistbuddy -c "add ManagedPlugInPolicies:com.microsoft.sharepoint.browserplugin dict" /Users/$loggedInUser/Library/Preferences/com.apple.Safari.plist
+/usr/libexec/plistbuddy -c "add ManagedPlugInPolicies:com.microsoft.sharepoint.browserplugin:PlugInFirstVisitPolicy string PlugInPolicyAllowNoSecurityRestrictions" /Users/$loggedInUser/Library/Preferences/com.apple.Safari.plist
+
+
