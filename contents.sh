@@ -186,3 +186,5 @@ ManagedPlugInPolicies = {
 CoreFoundation.CFPreferencesSetAppValue("ManagedPlugInPolicies", ManagedPlugInPolicies,  "com.apple.Safari") 
 CoreFoundation.CFPreferencesAppSynchronize("com.apple.Safari")
 
+killall cfprefsd
+
