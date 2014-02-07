@@ -173,4 +173,16 @@ loggedInUser=`/bin/ls -l /dev/console | /usr/bin/awk '{ print $3 }'`
 /usr/libexec/plistbuddy -c "add ManagedPlugInPolicies:com.microsoft.sharepoint.browserplugin dict" /Users/$loggedInUser/Library/Preferences/com.apple.Safari.plist
 /usr/libexec/plistbuddy -c "add ManagedPlugInPolicies:com.microsoft.sharepoint.browserplugin:PlugInFirstVisitPolicy string PlugInPolicyAllowNoSecurityRestrictions" /Users/$loggedInUser/Library/Preferences/com.apple.Safari.plist
 
+#!/usr/bin/python
+import CoreFoundation 
+
+ManagedPlugInPolicies = {
+
+# Always Allow Sharepoint plugin
+    "com.microsoft.sharepoint.browserplugin": { 
+        "PlugInFirstVisitPolicy": "PlugInPolicyAllowNoSecurityRestrictions", 
+    }, 
+
+CoreFoundation.CFPreferencesSetAppValue("ManagedPlugInPolicies", ManagedPlugInPolicies,  "com.apple.Safari") 
+CoreFoundation.CFPreferencesAppSynchronize("com.apple.Safari")
 
