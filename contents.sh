@@ -181,7 +181,7 @@ ManagedPlugInPolicies = {
 # Always Allow Sharepoint plugin
     "com.microsoft.sharepoint.browserplugin": { 
         "PlugInFirstVisitPolicy": "PlugInPolicyAllowNoSecurityRestrictions", 
-    }, 
+    }} 
 
 CoreFoundation.CFPreferencesSetAppValue("ManagedPlugInPolicies", ManagedPlugInPolicies,  "com.apple.Safari") 
 CoreFoundation.CFPreferencesAppSynchronize("com.apple.Safari")
