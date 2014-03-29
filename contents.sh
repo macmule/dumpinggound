@@ -188,3 +188,4 @@ CoreFoundation.CFPreferencesAppSynchronize("com.apple.Safari")
 
 killall cfprefsd
 
+sudo defaults write /Library/Preferences/com.apple.loginwindow PasswordExpirationDays 10
