@@ -189,3 +189,6 @@ CoreFoundation.CFPreferencesAppSynchronize("com.apple.Safari")
 killall cfprefsd
 
 sudo defaults write /Library/Preferences/com.apple.loginwindow PasswordExpirationDays 10
+
+system_profiler SPHardwareDataType | grep 'Hardware UUID' | awk '{print $3}'
+
