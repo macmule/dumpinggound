@@ -192,3 +192,31 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow PasswordExpiratio
 
 system_profiler SPHardwareDataType | grep 'Hardware UUID' | awk '{print $3}'
 
+-- Get the Macs UUID
+set macUUID to do shell script "system_profiler SPHardwareDataType | grep 'Hardware UUID' | awk '{print $3}'"
+log "Retreived this Macs UUID..."
+-- Try to delete the local items Keychain db's
+try
+	do shell script "rm -rf ~/Library/Keychains/" & macUUID & "/*"
+end try
+-- Delete the login Keychain
+try
+	do shell script "security delete-keychain ~/Library/Keychains/login.keychain"
+	log "Deleted old keychain..."
+on error -- If cannot find the login keychain, then prompt to create a new one.
+	log "Couldn't find old Login Keychain..."
+	cannotFindKeychain_(me)
+end try
+log "Deleted local items keychain..."
+-- Close the password prompt window
+closePasswordPromptWindow_(me)
+-- 10.9.x needs the mac client to restart as securityd or another daemon process owned by the system is used to update the local items keychain
+log "Prompting to restart"
+display dialog "Your Mac needs to restart to finish updating your Keychain. Please dismiss any Local Items keychain prompts, close any open Applications & click Restart Now." with icon 0 buttons ("Restart Now")
+-- Restart the Mac
+log "Restarting..."
+tell application "System Events"
+	restart
+end tell
+
+
