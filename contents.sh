@@ -219,4 +219,27 @@ tell application "System Events"
 	restart
 end tell
 
+defaults write org.pmbuko.ADPassMon selectedBehaviour -int 2
+
+do shell script "dscl . -passwd /Users/$USER " & enteredOldPassword & " " & enteredNewPassword
+
+defaults write org.pmbuko.ADPassMon enableKeychainLockCheck -bool true
+
+try
+  do shell script "security unlock-keychain -p ~/Library/Keychains/login.keychain"
+  set keychainState to "unlocked"
+  log "  Keychain unlocked..."
+on error
+  set keychainState to "locked"
+end try
+
+do shell script "security set-keychain-password -o " & enteredOldPassword & " -p " & enteredNewPassword & " ~/Library/Keychains/login.keychain"
+
+defaults write org.pmbuko.ADPassMon keychainPolicy "<some text>"
+
+sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLButton  "<button title>"
+sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLButtonURL "<some url>"
+
+sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLBrowser "<browser name>"
+
 
