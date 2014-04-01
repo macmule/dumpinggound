@@ -237,9 +237,7 @@ do shell script "security set-keychain-password -o " & enteredOldPassword & " -p
 
 defaults write org.pmbuko.ADPassMon keychainPolicy "<some text>"
 
-sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLButton  "<button title>"
-sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLButtonURL "<some url>"
+sudo defaults write org.pmbuko.ADPassMon.plist pwPolicyURLButton  "<button title>"
+sudo defaults write org.pmbuko.ADPassMon.plist pwPolicyURLButtonURL "<some url>"
 
-sudo defaults write /Library/Managed\ Preferences/btoms/org.pmbuko.ADPassMon.plist pwPolicyURLBrowser "<browser name>"
-
-
+sudo defaults write org.pmbuko.ADPassMon.plist pwPolicyURLBrowser "<browser name>"
