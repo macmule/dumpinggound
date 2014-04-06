@@ -241,3 +241,7 @@ defaults write org.pmbuko.ADPassMon pwPolicyURLButtonTitle "<button title>"
 defaults write org.pmbuko.ADPassMon pwPolicyURLButtonURL "<some url>"
 
 defaults write org.pmbuko.ADPassMon pwPolicyURLBrowser "<browser name>"
+
+defaults write org.pmbuko.ADPassMon passwordCheckInterval -int "<interval in hours>"
+
+defaults write org.pmbuko.ADPassMon allowPasswordChange -bool "<boolean value>"
