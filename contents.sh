@@ -245,3 +245,5 @@ defaults write org.pmbuko.ADPassMon pwPolicyURLBrowser "<browser name>"
 defaults write org.pmbuko.ADPassMon passwordCheckInterval -int "<interval in hours>"
 
 defaults write org.pmbuko.ADPassMon allowPasswordChange -bool "<boolean value>"
+
+dscl '<Domain Node Name>' -read /Users/<username> | grep "UniqueID:"
