@@ -247,3 +247,7 @@ defaults write org.pmbuko.ADPassMon passwordCheckInterval -int "<interval in hou
 defaults write org.pmbuko.ADPassMon allowPasswordChange -bool "<boolean value>"
 
 dscl '<Domain Node Name>' -read /Users/<username> | grep "UniqueID:"
+
+sudo jamf recon
+
+sudo jamf recon -endUsername $3
