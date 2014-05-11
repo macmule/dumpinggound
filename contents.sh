@@ -251,3 +251,5 @@ dscl '<Domain Node Name>' -read /Users/<username> | grep "UniqueID:"
 sudo jamf recon
 
 sudo jamf recon -endUsername $3
+
+sudo /Library/Application\ Support/JAMF/bin/setregproptool -c
