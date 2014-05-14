@@ -253,3 +253,39 @@ sudo jamf recon
 sudo jamf recon -endUsername $3
 
 sudo /Library/Application\ Support/JAMF/bin/setregproptool -c
+
+/usr/local/mysql/bin/mysql -u root
+
+mysql> USE jamfsoftware;
+
+mysql> select computer_id,default_distribution_point_id from computers where default_distribution_point_id != '';
+
++-------------+-------------------------------+
+| computer_id | default_distribution_point_id |
++-------------+-------------------------------+
+|         200 |                             8 |
+|           3 |                            14 |
+|           7 |                             7 |
+|           8 |                             6 |
+|           9 |                             4 |
+|          10 |                             8 |
+|         292 |                            12 |
+|          12 |                            14 |
+|          13 |                            14 |
+|          15 |                            5  |
+
+mysql> update computers set default_distribution_point_id=-1
+
++-------------+-------------------------------+
+| computer_id | default_distribution_point_id |
++-------------+-------------------------------+
+|         200 |                            -1 |
+|           3 |                            -1 |
+|           7 |                            -1 |
+|           8 |                            -1 |
+|           9 |                            -1 |
+|          10 |                            -1 |
+|         292 |                            -1 |
+|          12 |                            -1 |
+|          13 |                            -1 |
+|          15 |                            -1 |
