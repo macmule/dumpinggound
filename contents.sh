@@ -274,7 +274,7 @@ mysql> select computer_id,default_distribution_point_id from computers where def
 |          13 |                            14 |
 |          15 |                            5  |
 
-mysql> update computers set default_distribution_point_id=-1
+mysql> update computers set default_distribution_point_id=-1;
 
 +-------------+-------------------------------+
 | computer_id | default_distribution_point_id |
