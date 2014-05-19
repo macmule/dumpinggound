@@ -298,4 +298,5 @@ mysql> update computers set default_distribution_point_id=-1;
 <Reason-Code data_type="0">8</Reason-Code>
 
 <User-Name data_type="1">ComputerName.domain.com</User-Name>
+
 <User-Name data_type="1">ComputerName$</User-Name>
