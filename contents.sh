@@ -321,3 +321,36 @@ function showBar() {
     if (!safari.self.visible)
         safari.self.show();
 }
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>macmule Toolbar</title>
+		<link rel="stylesheet" href="extension_bar.css" type="text/css" charset="utf-8">
+	</head>
+	<body>
+		<script src="toolbar_button.js" type="text/javascript" charset="utf-8"></script>
+		<div id="logo" style="float:left">
+			<a id="main_link" href="http://macmule.com"><img src="extension_bar_icon.png" width="19" height="17" alt="mymacmule" title="mymacmule" url_piece="/" ></a>	
+		</div>
+		&nbsp;
+		<span id="links">
+			|
+			<a href="http://techjournal.318.com" class="link">318</a>
+			<a href="http://www.afp548.com" class="link">afp548</a>
+			<a href="http://derflounder.wordpress.com" class="link">Der Flounder</a>
+			<a href="http://grahamgilbert.com" class="link">Graham Gilbert</a>
+			<a href="http://krypted.com" class="link">Krypted</a>
+			<a href="http://managingosx.wordpress.com" class="link">Managing OSX</a>
+			|
+			<a href="https://jamfnation.jamfsoftware.com/index.html" class="link">JAMFNation</a>
+			<a href="http://www.macenterprise.org" class="link">Mac Enterprise</a>
+			<a href="http://webchat.freenode.net/?channels=#%23osx-server" class="link">osx-server IRC</a>
+			|
+			<a href="http://support.apple.com/kb/HT6175?viewlocale=en_US" class="link">Apple TCP UDP Ports</a>
+			<a href="http://static.afp548.com/mactips/bootpd.html" class="link">NetBoot</a>
+			<a href="http://support.apple.com/kb/ht1159" class="link">OSX Builds</a>
+			<a href="http://ss64.com" class="link">ss64</a>
+		</span>
+	</body>
+</html>
