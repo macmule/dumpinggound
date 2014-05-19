@@ -354,3 +354,64 @@ function showBar() {
 		</span>
 	</body>
 </html>
+
+body
+{
+margin:0;
+padding:3px;
+}
+
+#logo
+{
+border:1px solid rgba(0,0,0,0);padding:2px 2px 1px 2px
+}
+
+#logo:hover
+{
+border-radius:3px;border:1px solid #999;background:-webkit-gradient(linear,left top,left bottom,from(#ddd),to(#afafaf))
+}
+
+#logo:active
+{
+border-radius:3px;border:1px solid #999;background:-webkit-gradient(linear,left top,left bottom,from(#aaa),to(#ccc))
+}
+
+#links
+{
+margin-top:3px;
+display:inline-block
+}
+
+a.link
+{
+color:#282828;
+font-weight:bold;
+text-shadow:0 1px 0 rgba(255,255,255,0.4);
+text-decoration:none;
+padding:1px 2px 2px;
+display:inline-block;
+border-radius:8px;
+cursor:default;
+border:none;
+background:none;
+font:bold 11px helvetica,
+}
+
+a.link:hover
+{
+color:#fff;
+text-shadow:0 1px 0 rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.21)
+}
+
+a.link:active,a.link.toggled
+{
+color:#fff;
+text-shadow:0 1px 0 rgba(0,0,0,0.4);
+-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.5),0 1px 1px rgba(255,255,255,0.8)
+}
+
+a.link .toggled
+{
+background:rgba(0,0,0,0.35)
+}
