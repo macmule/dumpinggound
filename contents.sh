@@ -300,3 +300,24 @@ mysql> update computers set default_distribution_point_id=-1;
 <User-Name data_type="1">ComputerName.domain.com</User-Name>
 
 <User-Name data_type="1">ComputerName$</User-Name>
+
+safari.self.browserWindow.addEventListener("command", handle_command, false);
+
+function handle_command(event) {
+    if (event.command === "toggle_bar")
+        toggle_bar();
+    if (event.command === "contextual_search")
+        contextual_search();
+}
+
+function toggle_bar() {
+    if (safari.self.visible)
+        safari.self.hide();
+    else
+        safari.self.show();
+}
+
+function showBar() {
+    if (!safari.self.visible)
+        safari.self.show();
+}
