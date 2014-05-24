@@ -415,3 +415,25 @@ a.link .toggled
 {
 background:rgba(0,0,0,0.35)
 }
+
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+sudo /usr/libexec/PlistBuddy -c "Delete :StartCalendarInterval array" /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Hour integer "20"" /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist 
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Minute integer "0"" /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Weekday integer "6"" /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+sudo launchctl unload /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+sudo /usr/libexec/PlistBuddy -c "Delete :StartCalendarInterval array" /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Hour integer "20"" /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist 
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Minute integer "0"" /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+/usr/libexec/PlistBuddy -c "Add :StartCalendarInterval:Weekday integer "6"" /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+sudo launchctl load /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/com.apple.swupdate.sync.plist
+
+
