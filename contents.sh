@@ -221,7 +221,7 @@ end tell
 
 defaults write org.pmbuko.ADPassMon selectedBehaviour -int 2
 
-do shell script "dscl . -passwd /Users/$USER " & enteredOldPassword & " " & enteredNewPassword
+do shell script "dscl . -passwd /Users/$USER " & quoted form of enteredOldPassword & " " & quoted form of enteredNewPassword
 
 defaults write org.pmbuko.ADPassMon enableKeychainLockCheck -bool true
 
@@ -233,7 +233,7 @@ on error
   set keychainState to "locked"
 end try
 
-do shell script "security set-keychain-password -o " & enteredOldPassword & " -p " & enteredNewPassword & " ~/Library/Keychains/login.keychain"
+do shell script "security set-keychain-password -o " & quoted form of enteredOldPassword & " -p " & quoted form of enteredNewPassword & " ~/Library/Keychains/login.keychain"
 
 defaults write org.pmbuko.ADPassMon keychainPolicy "<some text>"
 
