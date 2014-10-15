@@ -445,3 +445,6 @@ background:rgba(0,0,0,0.35)
 		<key>TB Size Mode</key>
 		<integer>1</integer>
 	</dict>
+	
+security find-generic-password -l "Safari Extensions List" -g
+
