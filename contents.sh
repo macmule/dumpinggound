@@ -415,3 +415,33 @@ a.link .toggled
 {
 background:rgba(0,0,0,0.35)
 }
+
+	<key>NSToolbar Configuration BrowserToolbarIdentifier</key>
+	<dict>
+		<key>TB Default Item Identifiers</key>
+		<array>
+			<string>BackForwardToolbarIdentifier</string>
+			<string>com.mycomany.extension-myDeveloperID identifier</string>
+			<string>CloudTabsToolbarIdentifier</string>
+			<string>ShareToolbarIdentifier</string>
+			<string>InputFieldsToolbarIdentifier</string>
+			<string>ShowDownloadsToolbarIdentifier</string>
+		</array>
+		<key>TB Display Mode</key>
+		<integer>2</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+		<key>TB Item Identifiers</key>
+		<array>
+			<string>BackForwardToolbarIdentifier</string>
+			<string>CloudTabsToolbarIdentifier</string>
+			<string>ShareToolbarIdentifier</string>
+			<string>com.mycomany.extension-myDeveloperID identifier</string>
+			<string>InputFieldsToolbarIdentifier</string>
+			<string>ShowDownloadsToolbarIdentifier</string>
+		</array>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
