@@ -455,6 +455,6 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
    0:      GUID_partition_scheme                        *251.0 GB   disk0
    1:                        EFI EFI                     209.7 MB   disk0s1
    2:                  Apple_HFS Macintosh HD            85.0 GB    disk0s2
-   <b>3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</b>
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
    4:                  Apple_HFS Users HD                165.0 GB   disk0s4
    
