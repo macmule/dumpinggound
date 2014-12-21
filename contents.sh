@@ -449,3 +449,12 @@ background:rgba(0,0,0,0.35)
 security find-generic-password -l "Safari Extensions List" -g
 
 loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+
+/dev/disk0
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *251.0 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS Macintosh HD            85.0 GB    disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+   4:                  Apple_HFS Users HD                165.0 GB   disk0s4
+   
