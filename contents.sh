@@ -458,3 +458,16 @@ loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConso
    3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
    4:                  Apple_HFS Users HD                165.0 GB   disk0s4
    
+#!/bin/bash
+
+jamf policy -trigger OSXPostflightConfig
+
+#!/bin/bash
+
+sudo touch /.JSS-Managed
+
+#!/bin/sh
+
+jssSupervisedStatusReceipt=`ls -a / | grep -i .jss-* | grep -v .jssUpdates-* | grep -v .jssMaintenance-* | cut -c 6-`
+
+echo "<result>$jssSupervisedStatusReceipt</result>"
