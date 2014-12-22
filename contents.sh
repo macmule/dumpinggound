@@ -473,3 +473,22 @@ jssSupervisedStatusReceipt=`ls -a / | grep -i .jss-* | grep -v .jssUpdates-* | g
 echo "<result>$jssSupervisedStatusReceipt</result>"
 
 Error creating partition map: Placing a partition map on a Core Storage logical volume is not supported (-69671)
+
+diskutil coreStorage
+Usage:  diskutil [quiet] coreStorage|CS <verb> <options>,
+        where <verb> is as follows:
+
+     list                     (Show status of CoreStorage volumes)
+     info[rmation]            (Get CoreStorage information by UUID or disk)
+     convert                  (Convert a volume into a CoreStorage volume)
+     revert                   (Revert a CoreStorage volume to its native type)
+     create                   (Create a new CoreStorage logical volume group)
+     delete                   (Delete a CoreStorage logical volume group)
+     createVolume             (Create a new CoreStorage logical volume)
+     deleteVolume             (Delete a volume from a logical volume group)
+     encryptVolume            (Encrypt a CoreStorage logical volume)
+     decryptVolume            (Decrypt a CoreStorage logical volume)
+     unlockVolume             (Attach/mount a locked CoreStorage logical volume)
+     changeVolumePassphrase   (Change a CoreStorage logical volume's passphrase)
+
+diskutil coreStorage <verb> with no options will provide help on that verb
