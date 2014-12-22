@@ -492,3 +492,110 @@ Usage:  diskutil [quiet] coreStorage|CS <verb> <options>,
      changeVolumePassphrase   (Change a CoreStorage logical volume's passphrase)
 
 diskutil coreStorage <verb> with no options will provide help on that verb
+
+#!/bin/sh
+
+# Echo target drive
+echo "Target drive is: $1"
+
+# Delete the CoreStorage volume
+/usr/sbin/diskutil coreStorage deleteVolume "$1"
+echo "CoreStorage volume $1 deleted"
+
+# Get the UUID of the CoreStorage Logical Volume Group
+csLVGUUID=`/usr/sbin/diskutil coreStorage list | awk '/Logical Volume Group/{print $NF}'`
+echo "Logical Volume Group has UUID: $csLVGUUID..."
+
+# Create "Macintosh HD" volume in Logical Volume Group above 
+/usr/sbin/diskutil corestorage createVolume "$csLVGUUID" jhfs+ "Macintosh HD" 33%
+echo "Volume "Macintosh HD" created with "33%" of space available from $csLVGUUID..."
+	
+# Create "Users HD" volume in Logical Volume Group above
+/usr/sbin/diskutil corestorage createVolume "$csLVGUUID" jhfs+ "Users HD" 100%
+echo "Volume "Users HD" created with the remaining space available from $csLVGUUID..."
+
+#!/bin/sh
+
+# Get the UUID of the CoreStorage Logical Volume Group
+csLVGUUID=`/usr/sbin/diskutil corestorage list | awk '/Logical Volume Group/{print $NF}'`
+echo "We are going to delete the Logical Volume Group with UUID: $csLVGUUID..."
+	
+# Delete the CoreStorage Volume
+/usr/sbin/diskutil corestorage delete "$csLVGUUID"
+echo "Deleted the Logical Volume Group $csLVGUUID..."
+
+/usr/sbin/diskutil corestorage revert $1
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.macmule.corestoragerevert</string>
+	<key>Program</key>
+		<string>/Applications/CoreStorage Revert.app/Contents/MacOS/applet</string>
+	<key>RunAtLoad</key>
+	<true/>
+</dict>
+</plist>
+
+#!/bin/sh
+## postinstall
+
+pathToScript=$0
+pathToPackage=$1
+targetLocation=$2
+targetVolume=$3
+
+## Delete the AutoCasperNBI installed Casper Imaging launch agent
+sudo rm -rf "$3"/Library/LaunchAgents/com.AutoCasperNBI.CasperImaging.plist
+
+## If the launch agent exists after the above, error
+if [ -f "$3"/Library/LaunchAgents/com.AutoCasperNBI.CasperImaging.plist ]; then
+
+	echo "Error: com.AutoCasperNBI.CasperImaging.plist not deleted…"
+
+	exit 1
+
+else
+
+	echo "Success: com.AutoCasperNBI.CasperImaging.plist deleted…"
+
+fi
+
+-- Get the name Volume Name of the Macs CoreStorage volume.
+set csVolume to do shell script "diskutil cs list | awk '/Volume Name:/{out=$3; for(i=4;i<=NF;i++){out=out\" \"$i}; print out}'"
+
+-- If the above command come back with a Volume Name.
+if csVolume is not "" then
+	
+	-- Set this app to the front
+	tell application "System Events" to set frontmost of process "CoreStorage Revert" to true
+	
+	-- Advise that volume needs to be reverted, offering option to skip if wanted
+	display dialog "The volume " & csVolume & " is a CoreStorage volume & needs to be reverted to image this Mac." & return & return & "Do you wish to revert?" & return & return & "Once reverted Casper Imaging will launch." buttons {"Skip", "Revert"} with title "CoreStorage volumes detected" with icon 2 default button "Revert"
+	
+	-- If user chose to skip, then run the launchCasperImaging function
+	if button returned of the result is "Skip" then
+		my launchCasperImaging()
+	else
+		
+		-- Revert the Core Storage volume
+		do shell script "diskutil coreStorage revert /Volumes/" & quoted form of csVolume
+		-- Run the launchCasperImaging function
+		my launchCasperImaging()
+		
+	end if
+	
+else -- If the 1st command came back with no value, this means that no volumes have CoreStorage enabled	
+	
+	-- Run the launchCasperImaging function
+	my launchCasperImaging()
+	
+end if
+
+-- This function will launch Casper Imaging & quit this app.
+on launchCasperImaging()
+	tell application "Casper Imaging" to launch
+	tell me to quit
+end launchCasperImaging
