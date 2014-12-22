@@ -471,3 +471,7 @@ sudo touch /.JSS-Managed
 jssSupervisedStatusReceipt=`ls -a / | grep -i .jss-* | grep -v .jssUpdates-* | grep -v .jssMaintenance-* | cut -c 6-`
 
 echo "<result>$jssSupervisedStatusReceipt</result>"
+
+diskutil partitionDisk /Volumes/Macintosh\ HD/ GPT jhfs+ "Macintosh HD" 100%
+
+Error creating partition map: Placing a partition map on a Core Storage logical volume is not supported (-69671)
