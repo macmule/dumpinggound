@@ -599,3 +599,5 @@ on launchCasperImaging()
 	tell application "Casper Imaging" to launch
 	tell me to quit
 end launchCasperImaging
+
+Error: -69745: This operation can only be performed if there is exactly one Core Storage logical volume present in the group
