@@ -493,7 +493,7 @@ Usage:  diskutil [quiet] coreStorage|CS <verb> <options>,
 
 diskutil coreStorage <verb> with no options will provide help on that verb
 
-#!/bin/sh
+
 
 # Echo target drive
 echo "Target drive is: $1"
@@ -514,7 +514,7 @@ echo "Volume "Macintosh HD" created with "33%" of space available from $csLVGUUI
 /usr/sbin/diskutil corestorage createVolume "$csLVGUUID" jhfs+ "Users HD" 100%
 echo "Volume "Users HD" created with the remaining space available from $csLVGUUID..."
 
-#!/bin/sh
+
 
 # Get the UUID of the CoreStorage Logical Volume Group
 csLVGUUID=`/usr/sbin/diskutil corestorage list | awk '/Logical Volume Group/{print $NF}'`
@@ -539,7 +539,7 @@ echo "Deleted the Logical Volume Group $csLVGUUID..."
 </dict>
 </plist>
 
-#!/bin/sh
+
 ## postinstall
 
 pathToScript=$0
