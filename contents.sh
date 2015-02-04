@@ -601,3 +601,7 @@ on launchCasperImaging()
 end launchCasperImaging
 
 Error: -69745: This operation can only be performed if there is exactly one Core Storage logical volume present in the group
+
+Set-CASMailbox -Identity: "tonysmit" -ActiveSyncAllowedDeviceIDs: "<DeviceID_1>"
+
+Set-CASMailbox -Identity: "EmailAlias" -ActiveSyncBlockedDeviceIDs: "<DeviceID_1>"
