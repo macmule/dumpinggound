@@ -605,3 +605,5 @@ Error: -69745: This operation can only be performed if there is exactly one Core
 Set-CASMailbox -Identity: "EmailAlias" -ActiveSyncAllowedDeviceIDs: "<DeviceID_1>"
 
 Set-CASMailbox -Identity: "EmailAlias" -ActiveSyncBlockedDeviceIDs: "<DeviceID_1>"
+
+chflags hidden /mach_kernel
