@@ -608,4 +608,7 @@ Set-CASMailbox -Identity: "EmailAlias" -ActiveSyncBlockedDeviceIDs: "<DeviceID_1
 
 chflags hidden /mach_kernel
 
-
+/Library/LaunchDaemons/com.edb.launchd.portfoliodb.plist
+/Library/LaunchDaemons/com.extensis.dam-server.web.admin.launchd.plist
+/Library/LaunchDaemons/com.extensis.portfolio.server.media.delegate.plist
+/Library/LaunchDaemons/com.extensis.portfolio.server.elasticsearch.plist
