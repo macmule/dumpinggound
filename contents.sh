@@ -647,7 +647,6 @@ fi
 export CATALINA_OPTS="-Xms256m -Xmx1536m"
 
 if [ "x$ES_MAX_MEM" = "x" ]; then
-    ES_MAX_MEM=16g
+    ES_MAX_MEM=4g
 fi
-
 
