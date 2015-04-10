@@ -632,3 +632,22 @@ chflags hidden /mach_kernel
 </dict>
 </plist>
 
+#
+# Specify options to pass to the Java VM.
+#
+if [ "x$JAVA_OPTS" = "x" ]; then
+   JAVA_OPTS="-Xms128m -Xmx4g -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000"
+   JAVA_OPTS="$JAVA_OPTS -Djboss.modules.system.pkgs=$JBOSS_MODULES_SYSTEM_PKGS -Djava.awt.headless=true"
+   JAVA_OPTS="$JAVA_OPTS -Djboss.server.default.config=standalone.xml"
+else
+   echo "JAVA_OPTS already set in environment; overriding default settings with values: $JAVA_OPTS"
+fi
+
+# Increase the initial and maximum java heap size from the default
+export CATALINA_OPTS="-Xms256m -Xmx1536m"
+
+if [ "x$ES_MAX_MEM" = "x" ]; then
+    ES_MAX_MEM=16g
+fi
+
+
