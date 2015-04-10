@@ -612,3 +612,23 @@ chflags hidden /mach_kernel
 /Library/LaunchDaemons/com.extensis.dam-server.web.admin.launchd.plist
 /Library/LaunchDaemons/com.extensis.portfolio.server.media.delegate.plist
 /Library/LaunchDaemons/com.extensis.portfolio.server.elasticsearch.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>Label</key>
+	<string>Extensis Portfolio Server Media Delegate</string>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/Extensis/Portfolio Server/applications/tomcat/bin/media-delegate-launchd.sh</string>
+	</array>
+	<key>UserName</key>
+	<string>administrator</string>
+</dict>
+</plist>
+
