@@ -722,6 +722,7 @@ fi
 		<string>MacPro6,1</string>
 		<string>Xserve3,1</string>
 	</array>
+	
 	<key>EnabledSystemIdentifiers</key>
 	<array>
 		<string>MacBook11,1</string>
