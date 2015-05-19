@@ -763,3 +763,6 @@ The key's randomart image is:
 sh-3.2# cat /private/var/root/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnJyINccu7biZsEws9zjvO+C0DxQUbFf5KpdtIvUyDwf+OiENtPwdcCRpn1q5VnQeXfcPuQD4oXTp2LXqdcYF/PHyHSs7i0Vs03TCBZvn7/FPU7wnP5KwXqaPze8rvswJ0tV7sfFHr588A9jfTpH3dA+cyDAnoJbYAqw2IrngoJYQ1pYQaD3quz73nQWMevQHE/BeBzsYShnWmgeuxAIiD3Bk+b+kt3Jildbmw0Zry8hONcl/k4FqFzJcX2BDtxFotpSvJiBCCT9Dg02SF+i8Umg/VfZW5+dVTckepQFPMo1esatYTzKK7XCacBT/WmPrmb/Pfk9wL2YUvWt+P/DAb root@yoyo-server.local
 
+main-server:~ administrator$ sudo su
+Password:
+sh-3.2# sudo nano ~/.ssh/authorized_keys
