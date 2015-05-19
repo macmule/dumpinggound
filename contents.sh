@@ -803,17 +803,17 @@ fi
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.pentland.caspershare.rsync</string>
+	<string>com.launchdaemon.name</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Library/Scripts/Pentland Scripts/CasperShareRSync.sh</string>
+		<string>/path/to/rsync/script</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
 	<key>StandardErrorPath</key>
-	<string>/var/log/Pentland/CasperShareRSyncError.log</string>
+	<string>/path/to/error.log</string>
 	<key>StandardOutPath</key>
-	<string>/var/log/Pentland/CasperShareBackupRSync.log</string>
+	<string>/path/to/success.log</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
