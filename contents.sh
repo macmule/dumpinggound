@@ -769,7 +769,7 @@ sh-3.2# sudo nano ~/.ssh/authorized_keys
 
 #!/bin/sh
 
-#wait for network from chicolte
+#wait for network, method pinched from chilcote
 . /etc/rc.common
 CheckForNetwork
 while [ "${NETWORKUP}" != "-YES-" ]; do
