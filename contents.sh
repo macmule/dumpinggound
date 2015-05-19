@@ -766,3 +766,34 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnJyINccu7biZsEws9zjvO+C0DxQUbFf5KpdtIvUyD
 main-server:~ administrator$ sudo su
 Password:
 sh-3.2# sudo nano ~/.ssh/authorized_keys
+
+#!/bin/sh
+
+#wait for network from chicolte
+. /etc/rc.common
+CheckForNetwork
+while [ "${NETWORKUP}" != "-YES-" ]; do
+  sleep 5
+  NETWORKUP=
+  CheckForNetwork
+done
+
+echo "\n"
+
+date +"%H:%M:%S %m-%d-%y"
+
+emailAlert=$(/usr/bin/rsync -avrpogz --delete -e ssh 'root@server.mycompany.com:"/Some/Folder"' '/Some/Folder/')
+
+if [ -z "$emailAlert" ]; then
+
+        emailAlert="$(date +"%H:%M:%S %m-%d-%y") There was an error running the Rsync"
+
+        echo $emailAlert | `mail -s  "ERROR: /Some/Folder RSync $(hostname -s) $(date +"%H:%M:%S %m-%d-%y")"  email@mycompany.com`
+
+        echo "\n"
+
+else
+        echo $emailAlert
+
+        echo "\n"
+fi
