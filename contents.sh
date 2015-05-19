@@ -735,3 +735,31 @@ sudo softwareupdate --reset-ignored
 sudo launchctl load -w /System/Library/LaunchDaemons/org.postfix.master.plist
 
 sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+
+yoyo-server:~ administrator$ sudo su
+Password:
+sh-3.2# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/var/root/.ssh/id_rsa): 
+Created directory '/var/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /var/root/.ssh/id_rsa.
+Your public key has been saved in /var/root/.ssh/id_rsa.pub.
+The key fingerprint is:
+73:77:c8:83:17:2c:9e:b1:6e:71:2d:bf:68:e7:8e:3b root@yoyo-server.local
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|           .     |
+|          o o    |
+|         . B +   |
+|        S B O o  |
+|         + = =   |
+|          o   .  |
+|         .  Eo.. |
+|           .+*+  |
++-----------------+
+sh-3.2# cat /private/var/root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnJyINccu7biZsEws9zjvO+C0DxQUbFf5KpdtIvUyDwf+OiENtPwdcCRpn1q5VnQeXfcPuQD4oXTp2LXqdcYF/PHyHSs7i0Vs03TCBZvn7/FPU7wnP5KwXqaPze8rvswJ0tV7sfFHr588A9jfTpH3dA+cyDAnoJbYAqw2IrngoJYQ1pYQaD3quz73nQWMevQHE/BeBzsYShnWmgeuxAIiD3Bk+b+kt3Jildbmw0Zry8hONcl/k4FqFzJcX2BDtxFotpSvJiBCCT9Dg02SF+i8Umg/VfZW5+dVTckepQFPMo1esatYTzKK7XCacBT/WmPrmb/Pfk9wL2YUvWt+P/DAb root@yoyo-server.local
+
