@@ -831,3 +831,8 @@ receiving file list ... done sent 20 bytes received 224914 bytes 40897.09 bytes/
 
 22:00:00 04-25-15
 receiving file list ... done deleting Packages/012 JavaForOSX 2014-001.pkg .DS_Store Packages/ Packages/010 Keynote 6.5.3 MAS.dmg Packages/010 Numbers 3.5.3 MAS.dmg Packages/010 Pages 5.5.3 MAS.dmg Packages/010 iMovie 10.0.7 MAS.dmg Packages/012 Adobe Acrobat Update 10.1.13.pkg Packages/012 FEX Plugin for Illustrator CS6 3.5.4.dmg Packages/012 FEX Plugin for InDesign CS6 3.5.2.dmg Packages/012 FEX Plugin for Photoshop CS6 3.5.4.dmg Packages/012 FEX Pro Client 4.2.3 .dmg Packages/012 Java 8 Update 45.pkg Packages/012 Java For OSX 2014-001.pkg sent 476 bytes received 3309371428 bytes 289546.52 bytes/sec total size is 115486529472 speedup is 34.90
+
+Subject: ERROR: /Some/Folder RSync Some-Hostname 14:30:03 03-05-15 Date: Thursday, 5 March 2015 14:30:03 Greenwich Mean Time
+From: System Administrator
+To: email@mycompany.com
+14:30:03 03-05-15 There was an error running the Rsync
