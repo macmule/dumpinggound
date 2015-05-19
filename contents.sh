@@ -734,3 +734,4 @@ sudo softwareupdate --reset-ignored
 
 sudo launchctl load -w /System/Library/LaunchDaemons/org.postfix.master.plist
 
+sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
