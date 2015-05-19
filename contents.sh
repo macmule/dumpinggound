@@ -748,7 +748,7 @@ Your identification has been saved in /var/root/.ssh/id_rsa.
 Your public key has been saved in /var/root/.ssh/id_rsa.pub.
 The key fingerprint is:
 73:77:c8:83:17:2c:9e:b1:6e:71:2d:bf:68:e7:8e:3b root@yoyo-server.local
-The key's randomart image is:
+The keys randomart image is:
 +--[ RSA 2048]----+
 |                 |
 |           .     |
@@ -797,3 +797,31 @@ else
 
         echo "\n"
 fi
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.pentland.caspershare.rsync</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Scripts/Pentland Scripts/CasperShareRSync.sh</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/var/log/Pentland/CasperShareRSyncError.log</string>
+	<key>StandardOutPath</key>
+	<string>/var/log/Pentland/CasperShareBackupRSync.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>22</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+		<key>Weekday</key>
+		<integer>6</integer>
+	</dict>
+</dict>
+</plist>
