@@ -727,3 +727,8 @@ fi
 <array>
 	<string>MacBook11,1</string>
 </array>
+
+sudo softwareupdate --ignore JavaForOSX
+
+sudo softwareupdate --reset-ignored
+
