@@ -836,5 +836,3 @@ Subject: ERROR: /Some/Folder RSync Some-Hostname 14:30:03 03-05-15 Date: Thursda
 From: System Administrator
 To: email@mycompany.com
 14:30:03 03-05-15 There was an error running the Rsync
-
-/usr/bin/rsync -avrpogz --delete -e ssh 'root@server.mycompany.com:"/Some/Folder"' '/Some/Folder/'
