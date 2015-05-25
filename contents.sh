@@ -872,3 +872,11 @@ To: email@mycompany.com
 </dict>
 </plist>
 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>serverurl</key>
+  <string>http://jss.mycompany.com:8443/imagr_config.plist</string>
+</dict>
+</plist>
