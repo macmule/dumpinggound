@@ -838,3 +838,37 @@ To: email@mycompany.com
 14:30:03 03-05-15 There was an error running the Rsync
 
 /usr/sbin/dsconfigad -restrictDDNS "en0"
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>password</key>
+    <string>b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86</string>
+    <key>workflows</key>
+    <array>
+	<dict>
+		<key>name</key>
+		<string>10.10.3 Restore</string>
+		<key>restart_action</key>
+		<string>none</string>
+		<key>bless_target</key>
+		<true/>
+		<key>description</key>
+		<string>10.10.3 AutoDMG OS.dmg</string>
+        	<key>components</key>
+	        <array>
+        		<dict>
+                	 	<key>type</key>
+                		<string>image</string>
+                    		<key>first_boot</key>
+                    		<false/>
+                    		<key>url</key>
+                    		<string>http://10.0.1.30:3000/Packages/osx-10.10.3-14D136.hfs.dmg</string>
+                	</dict>
+        	</array>
+	</dict>
+    </array>
+</dict>
+</plist>
+
