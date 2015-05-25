@@ -864,7 +864,7 @@ To: email@mycompany.com
                     		<key>first_boot</key>
                     		<false/>
                     		<key>url</key>
-                    		<string>http://10.0.1.30:3000/Packages/osx-10.10.3-14D136.hfs.dmg</string>
+                    		<string>http://10.0.1.30/Packages/osx-10.10.3-14D136.hfs.dmg</string>
                 	</dict>
         	</array>
 	</dict>
