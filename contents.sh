@@ -872,3 +872,6 @@ To: email@mycompany.com
 </dict>
 </plist>
 
+csrutil netboot add <address>
+
+csrutil netboot list
