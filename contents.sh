@@ -881,3 +881,19 @@ csrutil netboot list
 updateServerFQDN="UPDATES.MYCOMPANY.COM"
 
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://"$updateServerFQDN":/index.sucatalog
+
+sudo jamf -removeSWUSettings
+
+#!/bin/bash
+
+catalogURL=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate CatalogURL)
+
+if [ -z $catalogURL ]; then
+
+	echo "<result>Not Set</result>"
+	
+else
+
+	echo "<result>Set</result>"
+
+fi
