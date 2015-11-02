@@ -875,3 +875,9 @@ To: email@mycompany.com
 csrutil netboot add <address>
 
 csrutil netboot list
+
+#!/bin/bash
+
+updateServerFQDN="UPDATES.MYCOMPANY.COM"
+
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL http://"$updateServerFQDN":/index.sucatalog
