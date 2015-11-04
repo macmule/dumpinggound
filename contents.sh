@@ -903,3 +903,4 @@ dsmemberutil checkmembership -U "$loggedInUser" -G admin
 dscl . -read /Groups/admin | awk '/GroupMembership:/{for(i=2;i<=NF;i++){out=out" "$i}; print out}'
 
 dsmemberutil flushcache
+
