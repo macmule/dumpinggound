@@ -908,4 +908,6 @@ date -r 1383213240
 
 defaults write ~/Library/Preferences/com.apple.Safari HomePage -string "https://macmule.com"
 
-openssl smime -inform DER -verify -in /Users/btoms/Downloads/com.apple.Safari.mobileconfig -noverify -out ~/Desktop/com.apple.Safari.mobileconfig
+openssl smime -inform DER -verify -in /path/to/downloaded.mobileconfig -noverify -out /path/to/de-signed.mobileconfig
+
+plutil -convert xml1 /path/to/de-signed.mobileconfig
