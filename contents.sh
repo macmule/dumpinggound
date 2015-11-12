@@ -911,3 +911,5 @@ defaults write ~/Library/Preferences/com.apple.Safari HomePage -string "https://
 openssl smime -inform DER -verify -in /path/to/downloaded.mobileconfig -noverify -out /path/to/de-signed.mobileconfig
 
 plutil -convert xml1 /path/to/de-signed.mobileconfig
+
+killall -KILL storeaccountd
