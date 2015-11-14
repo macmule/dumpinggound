@@ -913,3 +913,6 @@ openssl smime -inform DER -verify -in /path/to/downloaded.mobileconfig -noverify
 plutil -convert xml1 /path/to/de-signed.mobileconfig
 
 killall -KILL storeaccountd
+
+https://safari-extensions.apple.com/extensions/<identifier>/<Safari extension>
+
