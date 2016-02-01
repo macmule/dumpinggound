@@ -942,3 +942,24 @@ https://safari-extensions.apple.com/extensions/<identifier>/<Safari extension>
         </item>
     </channel>
 </rss>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+	<channel>
+		<title>ExampleApp ChangeLog</title>
+		<link>http://www.ExampleApp.com/</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+		<title>Version 0.4.3</title>
+			<sparkle:releaseNotesLink>http://dl.dropbox.com/u/1140644/ExampleApp/release_note.html</sparkle:releaseNotesLink>
+			<pubDate>Mon, 09 Nov 2009 01:30:08 GMT</pubDate>
+			<enclosure url="http://dl.dropbox.com/u/1140644/ExampleApp/ExampleApp_0.4.3.dmg"
+			length="1131824" 
+			sparkle:version="0.4.3" 
+			type="application/octet-stream" 
+			sparkle:dsaSignature="MC1CFHMWcZvgIvJa/uAg1o4EesJXqeSgAhUAyEcyE3SaVb1az4jYWlvG58Erz4UU=&#xA;" />
+		</item>
+	</channel>
+</rss>
+
