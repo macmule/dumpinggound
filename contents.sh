@@ -916,3 +916,29 @@ killall -KILL storeaccountd
 
 https://safari-extensions.apple.com/extensions/<identifier>/<Safari extension>
 
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>AutoCasperNBI's Changelog</title>
+        <link>https://macmule.com/AutoCasperNBI-AppCast.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        <item>
+		<title>Version 1.3.3</title>
+            <description><![CDATA[
+                <h2>1.3.3</h2>
+				Resolves an issue where ARD &/or VNC cannot be enabled on a 10.11.2 NBI with the "Reduce Image Size" option selected for NBI creation. <a href="https://github.com/macmule/AutoCasperNBI/issues/75" class="issue-link" title="10.11.2 ARD/VNC Unable to Authenticate">#75</a>
+				<br>
+				For more information, see <a href="https://macmule.com/2015/12/18/10-11-2-cannot-enable-ard-or-vnc-if-libraryapplication-supportappleremote-desktop-is-missing/">this post.</a>
+    		]]>
+    		</description>
+            <pubDate>Fri, 18 December 2015 11:00 +0000</pubDate>
+            <enclosure url="https://github.com/macmule/AutoCasperNBI/releases/download/1.3.3/AutoCasperNBI.zip"
+            sparkle:version="101"
+            length="1623481" 
+            type="application/octet-stream" 
+            sparkle:dsaSignature="MCwCFHoNKXujxHEsccUTiKd8S0Yn+ECmAhQTD6psO0Z2x3hnzm++gg6l3OheXA==" />
+            <sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
+        </item>
+    </channel>
+</rss>
