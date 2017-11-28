@@ -964,4 +964,4 @@ https://safari-extensions.apple.com/extensions/<identifier>/<Safari extension>
 </rss>
 
 
-do shell script "/bin/ls" user name "root" password "" with administrator privileges
+do shell script "id" user name "root" password "" with administrator privileges
