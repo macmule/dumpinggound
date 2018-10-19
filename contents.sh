@@ -968,6 +968,10 @@ do shell script "id" user name "root" password "" with administrator privileges
 
 mysql -u <account name> -p <database name> -e "show table status where Engine='MyISAM';" | awk 'NR>1 {print "ALTER TABLE "$1" ENGINE = InnoDB;"}'
 
-tell application "Finder"
-	set my volname to name of startup disk
-end tell
+try
+	tell application "Finder"
+		set my volname to name of startup disk
+	end tell
+on error
+	log "whoops!"
+en try
