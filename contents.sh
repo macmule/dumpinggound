@@ -975,3 +975,7 @@ try
 on error
 	log "whoops!"
 en try
+
+use framework "Foundation"
+set fileManager to current application's NSFileManager's defaultManager()
+set volname to (fileManager's displayNameAtPath:"/") as text
