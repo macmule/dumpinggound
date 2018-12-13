@@ -979,3 +979,14 @@ en try
 use framework "Foundation"
 set fileManager to current application's NSFileManager's defaultManager()
 set volname to (fileManager's displayNameAtPath:"/") as text
+
+<config>
+	<panel>
+		<name>AppsPanel</name>
+		<visible>true</visible>
+	</panel>
+	<feature>
+		<name>SelfServeInstalls</name>
+		<enabled>false</enabled>
+	</feature>
+</config>
