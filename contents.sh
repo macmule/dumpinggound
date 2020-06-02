@@ -991,7 +991,8 @@ set volname to (fileManager's displayNameAtPath:"/") as text
 	</feature>
 </config>
 
-example ~ % curl https://fael-downloads-prod.focusrite.com curl: (60) SSL certificate problem: Invalid certificate chain
+example ~ % curl https://fael-downloads-prod.focusrite.com 
+curl: (60) SSL certificate problem: Invalid certificate chain
 
 sudo cp /etc/ssl/cert.pem /etc/ssl/cert.pem.orig
 sudo nano -c /etc/ssl/cert.pem
