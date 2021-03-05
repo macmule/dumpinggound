@@ -996,3 +996,16 @@ curl: (60) SSL certificate problem: Invalid certificate chain
 
 sudo cp /etc/ssl/cert.pem /etc/ssl/cert.pem.orig
 sudo nano -c /etc/ssl/cert.pem
+
+/usr/bin/profiles list -type provisioning | /usr/bin/grep c9434bc1-de69-4727-85f7-4868f80feed6
+
+/usr/bin/profiles remove -type provisioning -uuid c9434bc1-de69-4727-85f7-4868f80feed6
+
+#!/bin/bash
+
+if [ -n "${/usr/bin/profiles list -type provisioning | /usr/bin/grep c9434bc1-de69-4727-85f7-4868f80feed6}" ]
+then
+    /bin/echo "iMovie_27_Sep provisioning profile found, removing..."
+    /usr/bin/profiles remove -type provisioning -uuid c9434bc1-de69-4727-85f7-4868f80feed6
+    /bin/echo "iMovie_27_Sep provisioning profile removed..."
+fi
