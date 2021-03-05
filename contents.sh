@@ -1003,7 +1003,7 @@ sudo nano -c /etc/ssl/cert.pem
 
 #!/bin/bash
 
-if [ -n "${/usr/bin/profiles list -type provisioning | /usr/bin/grep c9434bc1-de69-4727-85f7-4868f80feed6}" ]
+if [ -n "$(/usr/bin/profiles list -type provisioning | /usr/bin/grep c9434bc1-de69-4727-85f7-4868f80feed6)" ]
 then
     /bin/echo "iMovie_27_Sep provisioning profile found, removing..."
     /usr/bin/profiles remove -type provisioning -uuid c9434bc1-de69-4727-85f7-4868f80feed6
